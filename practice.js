@@ -71,9 +71,9 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-function reversedLooper(family){
-  for(let i = family.length - 1; i <= 0; i--){
-    alert(family[i]);
+function reversedLooper(letters){
+  for(let i = letters.length - 1; i >= 0; i--){
+    alert(letters[i]);
   }
 }
 
@@ -94,7 +94,7 @@ function evenFinder(nums){
   let newNums = [];
   for(let i = 0; i < nums.length; i++){
     if(nums[i] % 2 === 0){
-      newNums = nums.slice(i, i+1);
+      newNums.push(nums[i]);
     }
   }
   return newNums;
@@ -128,15 +128,16 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 //Code Here
 function divider(numbersArray){
-  arr = [[],[]];
-  for(let i = 0; i < numbersArray.length -1; i++){
+  evenArr = [];
+  oddArr = [];
+  for(let i = 0; i < numbersArray.length; i++){
     if(numbersArray[i] % 2 === 0){
-      arr[0][0].push(arr[i]);
+      evenArr.push(numbersArray[i]);
     } else{
-      arr[0][1].push(arr[i]);
+      oddArr.push(numbersArray[i]);
     }
   }
-  return arr;
+  return [evenArr, oddArr];
 }
 
 
@@ -197,7 +198,7 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 function removeItem(myGroceryList, item){
-  if(!myGroceryList || item)
+  if(!myGroceryList || !item)
     return [];
 
   for(let i = 0; i < myGroceryList.length; i++){
@@ -209,10 +210,11 @@ function removeItem(myGroceryList, item){
 }
 
 function addItem(myGroceryList, item){
-  if(!myGroceryList || item)
+  if(!myGroceryList || !item)
     return [];
 
   myGroceryList.push(item);
+  return myGroceryList;
 }
 
 
@@ -246,7 +248,7 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   
 //Code Here
 function addTen(numbers){
-  let newArr = numbers.splice();
+  let newArr = numbers.slice();
   for(let i = 0; i < newArr.length; i++){
     newArr[i] = parseInt(newArr[i]) + 10;
   }
@@ -294,11 +296,12 @@ function both(arr1, arr2){
   let bothArr = [];
   for(let i = 0; i < arr1.length; i++){
     for(let x = 0; x < arr2.length; x++){
-      if(arr[i] === arr[2]){
-        bothArr.push(arr[i]);
+      if(arr1[i] === arr2[x]){
+        bothArr.push(arr1[i]);
       }
     }
   }
+  return bothArr;
 }
 
 
@@ -349,7 +352,7 @@ devMountainEmployees.push(joe, cahlan, ryan, colt);
 
 //Code Here
 for(let i = 0; i < devMountainEmployees.length; i++){
-  if(devMountainEmployees[i].name === 'cahlan'){
+  if(devMountainEmployees[i].name === 'Cahlan'){
     devMountainEmployees.splice(i, 1);
   }
 }
@@ -385,11 +388,11 @@ var user1 = {
 //Code Here
 users.push(user1, {
   name: 'Mark McIver',
-  email: 'mark.mciver@devmounta.in',
+  email: 'marky.mciver@devmounta.in',
   password: 'hunter2',
   username: 'ihazcode'},{
   name: 'Mark McIver',
-  email: 'mark.mciver@devmounta.in',
+  email: 'markal.mciver@devmounta.in',
   password: 'hunter2',
   username: 'ihazcode'});
 
